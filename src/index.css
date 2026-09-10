@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #050a15;
+    --bg-secondary: #0a1128;
+    --bg-card: #0c1535;
+    --bg-elevated: #111c44;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --gold: #f59e0b;
+    --gold-glow: rgba(245, 158, 11, 0.15);
+  }
+
+  html.light, [data-theme="light"] {
+    --bg-main: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-elevated: #f1f5f9;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-subtle: #e2e8f0;
+    --gold: #d97706;
+    --gold-glow: rgba(217, 119, 6, 0.12);
+  }
+}
+
+/* =========================================================
+   LIGHT THEME GLOBAL COMPONENT ADAPTATIONS
+   ========================================================= */
+
+html.light body {
+  background-color: #f8f9fc !important;
+  color: #0f172a !important;
+}
+
+/* Main background overrides */
+html.light .bg-\[\#050a15\],
+html.light .bg-\[\#040814\],
+html.light .bg-\[\#070d1e\] {
+  background-color: #f8f9fc !important;
+}
+
+/* Navbar & fixed headers */
+html.light nav,
+html.light .bg-\[\#050a15\]\/95,
+html.light .bg-\[\#050a15\]\/90 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #0f172a !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Luxury card containers */
+html.light .bg-\[\#0a1128\],
+html.light .bg-\[\#0a1128\]\/95,
+html.light .bg-\[\#0a1128\]\/60 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Form input backgrounds */
+html.light .bg-\[\#111c44\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Subtle surfaces */
+html.light .bg-white\/5 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-white\/10 {
+  background-color: #e2e8f0 !important;
+}
+
+html.light .bg-blue-950\/70,
+html.light .bg-blue-950\/30 {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+}
+
+html.light .bg-red-950\/60,
+html.light .bg-red-950\/30,
+html.light .bg-red-950\/70 {
+  background-color: #fef2f2 !important;
+  border-color: #fecaca !important;
+}
+
+/* Borders */
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/20 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Text color adaptations */
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-gray-200,
+html.light .text-gray-300 {
+  color: #334155 !important;
+}
+
+html.light .text-gray-400 {
+  color: #64748b !important;
+}
+
+html.light .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+html.light .text-zinc-900 {
+  color: #0f172a !important;
+}
+
+/* Hero & Section Gradients */
+html.light .bg-gradient-to-b.from-\[\#050a15\].via-\[\#0a1128\].to-\[\#070d1e\] {
+  background-image: linear-gradient(to bottom, #f8f9fc, #ffffff, #f1f5f9) !important;
+}
+
+html.light .bg-gradient-to-r.from-amber-950\/30.via-\[\#0a1128\].to-blue-950\/30 {
+  background-image: linear-gradient(to right, #fef3c7, #ffffff, #eff6ff) !important;
+  border-color: #fde68a !important;
+}
+
+html.light .bg-gradient-to-r.from-red-950\/70.via-\[\#0a1128\].to-amber-950\/40,
+html.light .bg-gradient-to-r.from-red-950\/60.via-\[\#0a1128\].to-blue-950\/60 {
+  background-image: linear-gradient(to right, #fee2e2, #ffffff, #fef3c7) !important;
+  border-color: #fca5a5 !important;
+}
+
+html.light .text-white\/\[0\.02\] {
+  color: rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Inputs & Form Fields */
+html.light input,
+html.light select,
+html.light textarea {
+  color: #0f172a !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Modals & Dropdown popovers */
+html.light .origin-top-right,
+html.light [role="menu"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light [role="menu"] .text-gray-300 {
+  color: #334155 !important;
+}
+
+html.light [role="menu"] .text-gray-300:hover {
+  background-color: #f1f5f9 !important;
+  color: #b45309 !important;
+}
+
+/* Smooth transition when toggling themes */
+body, nav, div, section, header, main, button, input, select {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.15s ease;
+}
