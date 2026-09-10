@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import axios from "axios";
 import { 
@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 
-const API_BASE = "http://localhost:1234";
+const API_BASE = "https://wiki-backend-658m.onrender.com";
 
 export default function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { 
   ShoppingBag, 
@@ -19,7 +19,7 @@ import { toast } from "react-toastify";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
 
-const API_BASE = "http://localhost:1234";
+const API_BASE = "https://wiki-backend-658m.onrender.com";
 
 export default function Cart() {
   const { 

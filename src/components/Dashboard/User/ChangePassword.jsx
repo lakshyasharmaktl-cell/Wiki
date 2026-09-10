@@ -1,9 +1,9 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Lock, RefreshCw, KeyRound } from "lucide-react";
 
-const API_BASE = "http://localhost:1234";
+const API_BASE = "https://wiki-backend-658m.onrender.com";
 
 export default function ChangePassword() {
   const [loading, setLoading] = useState(false);

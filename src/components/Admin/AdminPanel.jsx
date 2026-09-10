@@ -27,7 +27,7 @@ import AdminProducts from "./AdminProducts";
 import AdminUsers from "./AdminUsers";
 import AdminOrders from "./AdminOrders";
 
-const API_BASE = "http://localhost:1234";
+const API_BASE = "https://wiki-backend-658m.onrender.com";
 
 export default function AdminPanel() {
   const { user, isAdmin, demoLogin } = useAuth();

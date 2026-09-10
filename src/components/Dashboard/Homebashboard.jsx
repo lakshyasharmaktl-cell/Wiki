@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   User, 
   ShoppingBag, 
@@ -24,7 +24,7 @@ import ChangeImg from "./User/ChangeImg";
 import Setting from "./User/Setting";
 import Delete from "./User/Delete";
 
-const API_BASE = "http://localhost:1234";
+const API_BASE = "https://wiki-backend-658m.onrender.com";
 
 export default function Homebashboard() {
   const { user, isAuthenticated, logout, isAdmin } = useAuth();

@@ -1,11 +1,11 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useAuth } from "../../../context/AuthContext";
 import { AlertTriangle, Trash2, RefreshCw } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const API_BASE = "http://localhost:1234";
+const API_BASE = "https://wiki-backend-658m.onrender.com";
 
 export default function Delete() {
   const { logout } = useAuth();
