@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./components/Home/Home.jsx";
 import SignUp from "./components/Auth/Signup.jsx";
@@ -15,11 +15,19 @@ import ProductsPage from "./components/Product/ProductsPage.jsx";
 import Cart from "./components/Product/Cart.jsx";
 import Maclaan from "./components/Wishky/Maclaan.jsx";
 
-import { AuthProvider } from "./context/AuthContext.jsx";
+import { AuthProvider, useAuth } from "./context/AuthContext.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
 import { ThemeProvider, useTheme } from "./context/ThemeContext.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+function AdminRoute({ children }) {
+  const { isAdmin, isAuthenticated, loading } = useAuth();
+  if (loading) return null;
+  if (!isAuthenticated) return <Navigate to="/user-login" replace />;
+  if (!isAdmin) return <Navigate to="/dashboard" replace />;
+  return children;
+}
 
 function AppContent() {
   const { theme } = useTheme();
@@ -62,9 +70,9 @@ function AppContent() {
                 <Route path="/dashboard" element={<DashBoard />} />
                 <Route path="/dashboard/*" element={<DashBoard />} />
 
-                {/* Administrator Panel */}
-                <Route path="/admin" element={<AdminPanel />} />
-                <Route path="/admin/*" element={<AdminPanel />} />
+                {/* Administrator Panel (Admin Only) */}
+                <Route path="/admin" element={<AdminRoute><AdminPanel /></AdminRoute>} />
+                <Route path="/admin/*" element={<AdminRoute><AdminPanel /></AdminRoute>} />
 
                 {/* 404 Fallback */}
                 <Route path="*" element={<PageNotFound />} />
